@@ -1,0 +1,42 @@
+$primary-color: rgb(229, 242, 185)
+$dark-primary-color: gray
+
+$border-radius: 5px
+$card-padding: 10px 10px
+$card-font-size: 14px
+$card-font-weight: 600
+
+
+@mixin card__style
+  padding: $card-padding
+  font-size: $card-font-size
+  background-color: $primary-color
+  color: $dark-primary-color
+  border: none
+  border-radius: $border-radius
+  cursor: pointer
+  font-weight: $card-font-weight
+  height: 200px
+  width: 200px
+  display: flex
+  flex-flow: column nowrap
+  justify-content: space-evenly
+  gap: 5px
+  align-items: center
+
+
+  &:hover 
+    background-color: darken($primary-color, 10%)
+  
+
+  &:focus 
+    outline: none
+  
+.card__wrapper
+    @include card__style
+    &.dark-mode
+        background-color: $dark-primary-color 
+        color: $primary-color
+.card-sizes
+    display: flex
+    gap: 5px

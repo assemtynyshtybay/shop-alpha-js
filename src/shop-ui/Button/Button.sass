@@ -1,0 +1,41 @@
+$primary-color: white
+$dark-primary-color: gray
+$active-color: lightpink
+$border-radius: 5px
+$button-padding: 10px 10px
+$button-font-size: 14px
+$button-font-weight: 600
+
+
+@mixin button__style
+  padding: $button-padding
+  font-size: $button-font-size
+  background-color: $primary-color
+  color: $dark-primary-color
+  border: none
+  border-radius: $border-radius
+  cursor: pointer
+  font-weight: $button-font-weight
+  height: 20px
+  width: fit-content
+  display: flex
+  justify-content: space-evenly
+  gap: 5px
+  align-items: center
+
+
+  &:hover 
+    background-color: darken($primary-color, 10%)
+  
+
+  &:focus 
+    outline: none
+  
+.button__wrapper
+    @include button__style
+    &.dark-mode
+        background-color: $dark-primary-color 
+        color: $primary-color
+    &.active
+        transform: scale(1.1)
+        background-color: $active-color

@@ -1,0 +1,29 @@
+$primary-color: white
+$dark-primary-color: gray
+
+$border-radius: 5px
+$input-padding: 10px 10px
+$input-font-size: 14px
+$input-font-weight: 600
+
+
+@mixin input__style
+  padding: $input-padding
+  font-size: $input-font-size
+  background-color: $primary-color
+  color: $dark-primary-color
+  border: none
+  border-radius: $border-radius
+  cursor: pointer
+  font-weight: $input-font-weight
+  height: 20px
+
+  &:hover 
+    background-color: darken($primary-color, 10%)
+  
+
+  &:focus 
+    outline: none
+
+.search-input__wrapper
+    @include input__style
